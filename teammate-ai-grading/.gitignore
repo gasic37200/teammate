@@ -1,0 +1,31 @@
+# --- [Security] ---
+# 가상환경 설정 및 보안 파일 (가장 중요)
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# --- [Python] ---
+# 바이트코드 및 캐시 파일
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.iloc/
+
+# --- [OS / IDE] ---
+# 운영체제 및 에디터 설정 파일
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- [FastAPI / Deployment] ---
+# 로그 및 빌드 관련
+*.log
+build/
+dist/
+*.egg-info/
