@@ -1,0 +1,23 @@
+services:
+  teammate-web:
+    build:
+      context: ./teammate-grading-web/teammate-grading-web
+    container_name: teammate-web
+    ports:
+      - "8889:8889"
+    environment:
+      AI_MODULE_BASE_URL: http://teammate-ai-grading:8010
+      FEEDBACK_API_BASE_URL: ${FEEDBACK_API_BASE_URL:-http://feedback-api:7000}
+    depends_on:
+      - teammate-ai-grading
+    restart: unless-stopped
+
+  teammate-ai-grading:
+    build:
+      context: ./teammate-ai-grading
+    container_name: teammate-ai-grading
+    expose:
+      - "8010"
+    env_file:
+      - ./teammate-ai-grading/.env
+    restart: unless-stopped
