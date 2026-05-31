@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: teammate-grading-web
+
+server:
+  port: 8889
+
+ai:
+  module:
+    base-url: ${AI_MODULE_BASE_URL:http://localhost:8010}
+    grading-path: /api/grading
+
+feedback:
+  base-url: ${FEEDBACK_API_BASE_URL:http://localhost:7000}
