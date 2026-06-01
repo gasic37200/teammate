@@ -1,7 +1,7 @@
 services:
   teammate-web:
     build:
-      context: ./teammate-grading-web/teammate-grading-web
+      context: ./teammate-grading-web
     container_name: teammate-web
     ports:
       - "8889:8889"
